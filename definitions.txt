@@ -1,0 +1,89 @@
+-- class, object
+Class is a template. Object is an instantiation/instance of the template
+
+-- instantiation
+The use of an object class so that the object inherits some or all of the main class characteristics.
+
+-- method
+A functions that belongs to a class or object. An interface that an object presents to the outside world to perform some task.
+
+-- virtual method, pure virtual method
+Allows a program to call methods that don't necessarily even exit at the moment the code is compiled ("late"). You can trigger a method in all instances of a class by calling a method defined in the base class.
+
+-- class/static method
+It can be called across the class instead of each instantiation individually. For example you could return a list of all instantiations of the class.
+
+-- static/class initializer
+initialize variables and objects?
+
+-- constructor
+initialize class?
+
+-- destructor/finalizer
+Cleanup when removing an object. Remove associations?
+
+-- superclass or base class
+
+-- subclass or derived class
+
+-- inheritance
+Where an instance of a class shares some or all of the main class characteristics.
+
+-- encapsulation
+The process of hiding all of the details of an object that do not contribute to its essential characteristics. Providing an interface that other classes use to access and modify the data properties of an object. A class may have its own functions that manipulate some attribute. We don't need to know how the function works, but we can call it and it will do it for us.
+
+private - Only the current class will have access to the field or method.
+
+protected - Only the current class and subclasses (and sometimes also same-package classes) of this class will have access to the field or method.
+
+public - Any class can refer to the field or call the method.
+
+-- multiple inheritance
+A subclass inherits from multiple base classes. For example a Cat may inherit from Mammal, Pet, and Cartoon character.
+
+-- delegation/forwarding
+calling a function(sender) within a function(receiver)? Base class method and derived class method with same name, which is called? Delegation no overwrite, but forwarding may?
+
+-- composition/aggregation
+has-a relationship instead of is-a to help SRP.
+
+-- abstract class
+
+-- interface/protocol
+How about an analogy: when I was in the Air Force, I went to pilot training and became a USAF (US Air Force) pilot. At that point I wasn't qualified to fly anything, and had to attend aircraft type training. Once I qualified, I was a pilot (Abstract class) and a C-141 pilot (concrete class). At one of my assignments, I was given an additional duty: Safety Officer. Now I was still a pilot and a C-141 pilot, but I also performed Safety Officer duties (I implemented ISafetyOfficer, so to speak). A pilot wasn't required to be a safety officer, other people could have done it as well.
+
+All USAF pilots have to follow certain Air Force-wide regulations, and all C-141 (or F-16, or T-38) pilots 'are' USAF pilots. Anyone can be a safety officer. So, to summarize:
+
+Pilot: abstract class
+C-141 Pilot: concrete class
+ISafety Officer: interface
+
+-- method overriding
+Two methods with the same method name and parameters (funciton matching)
+
+-- method overloading
+Two or more methods have the same method name but different parameters (function mapping).
+
+-- polymorphism
+The provision of a single interface to entities of different types. Being able to send the same message to different objects and get different results. Objects that inherit from the same class may have different methods with the same name. Calling them may produce different returns.
+
+-- is-a versus has-a relationships
+inheritance (inherit base class) vs. composition (use another class)
+
+-- method signatures
+def method(args)
+things that make a method unique so you can call on it
+
+-- method visibility
+scope?
+
+-- DOM
+Document Object Model - an API for HTML documents. It helps give access to certain HTML elements on a web page. HTML is parsed by browser and converted into the DOM.
+
+-- SOLID
+OOP acronym:
+Single-Responsibility (every class should have one responsibility)
+Open-closed (open for extension but closed for modification)
+Liskov substitution (subtypes of classes, their objects can replace objects of the main class)
+Interface segragation (client should not depend on unused methods)
+Dependency inversion (modules and details should depend on abstractions)
