@@ -6,17 +6,20 @@ module CoverageFinder
       loci_list.sort! #sorting for search alogrithm (binary_search)
       bookend = binary_search(loci_list, array[0].to_i, array[1].to_i) #establish a reasonable loci index to start search for coverage and avoid iterating through entire list
       if bookend
-        start = bookend - 100 #hardcoded based on distribution of read lengths and differences of basepair between loci of interest
-        finish = bookend + 100 #hardcoded based on distribution of read lengths and differences of basepair between loci of interest
-        if start < 0
-          start = 0 #no reason to wrap around array
+        counter = 0
+        while loci_list[bookend + counter] >= array[0].to_i && loci_list[bookend + counter] < (array[0].to_i + array[1].to_i)
+          coverage_list[loci_list[bookend + counter]] += count
+          counter += 1
+          if bookend + counter >= loci_list.length
+            break
+          end
         end
-        if finish > loci_list.length
-          finish = loci_list.length #no reason to wrap around array
-        end
-        loci_list[start..finish].each do |position|
-          if (position >= array[0].to_i) && (position < (array[0].to_i + array[1].to_i))
-            coverage_list[position] += count
+        counter = -1
+        while loci_list[bookend + counter] >= array[0].to_i && loci_list[bookend + counter] < (array[0].to_i + array[1].to_i)
+          coverage_list[loci_list[bookend + counter]] += count
+          counter -= 1
+          if bookend + counter < 0
+            break
           end
         end
       end
