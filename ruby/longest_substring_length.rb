@@ -6,7 +6,6 @@ def length_of_longest_substring(s)
     char_to_index_map = {}
 
     s.chars.each_with_index do |c, i|
-      binding.pry
         if current_index = char_to_index_map[c] and current_index > start_index # if current_index != nil
             start_index = current_index
         end
